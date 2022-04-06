@@ -1,0 +1,54 @@
+1.DISPLAY MANAGER.
+Saya mengetik grep '/usr/s\?bin' /etc/systemd/system/display-manager.service  dan muncul seperti di bawah ini :
+
+gdm.service - GNOME Display Manager
+     Loaded: loaded (/lib/systemd/system/gdm.service; static; vendor preset: en>
+     Active: active (running) since Mon 2022-04-04 13:53:54 WIB; 1h 31min ago
+   Main PID: 1008 (gdm3)
+      Tasks: 3 (limit: 4369)
+     Memory: 4.2M
+     CGroup: /system.slice/gdm.service
+             └─1008 /usr/sbin/gdm3
+
+2. WINDOWS MANAGER
+
+saya mengetik wmctrl -m sehingga keluar
+Name: GNOME Shell ini adalah nama windows manager yang laptop saya gunakan
+Class: N/A
+PID: N/A
+Window manager's "showing the desktop" mode: OFF
+terdapat keterangan off dikarenakan saya sedang menggunakan linux bukan windows
+
+3.DESKTOP ENVIRONMENT
+saya mengetik screenfecth dan tidak ditemukan screenfecth sehingga saya menginstal screenfecth menggunakan kode  sudo apt install screenfetch
+dan keluar 
+  ./+o+-       chamida@chamida-Vostro-3401
+                  yyyyy- -yyyyyy+      OS: Ubuntu 20.04 focal
+               ://+//////-yyyyyyo      Kernel: x86_64 Linux 5.14.0-1031-oem
+           .++ .:/++++++/-.+sss/`      Uptime: 31m
+         .:++o:  /++++++++/:--:/-      Packages: 1668
+        o:+o+:++.`..```.-/oo+++++/     Shell: bash 5.0.17
+       .:+o:+o/.          `+sssoo+/    Resolution: 1366x768
+  .++/+:+oo+o:`             /sssooo.   DE: GNOME 3.36.5
+ /+++//+:`oo+o               /::--:.   WM: Mutter
+ \+/+o+++`o++o               ++////.   WM Theme: Adwaita
+  .++.o+++oo+:`             /dddhhh.   GTK Theme: Yaru [GTK2/3]
+       .+.o+oo:.          `oddhhhh+    Icon Theme: Yaru
+        \+.++o+o``-````.:ohdhhhhh+     Font: Ubuntu 11
+         `:o+++ `ohhhhhhhhyo++os:      Disk: 11G / 44G (26%)
+           .o:`.syhhhhhhh/.oo++o`      CPU: Intel Core i3-1005G1 @ 4x 3,4GHz [58.0°C]
+               /osyyyyyyo++ooo+++/     GPU: Intel Corporation Device 8a56 (rev 07)
+                   ````` +oo+++o\:     RAM: 2334MiB / 3699MiB
+                          `oo++.      
+
+Operasi system menggunakan Ubuntu 20.04 focal
+4. SHELL
+saya mengetik cat /etc/shells dan menemukan shell yang digunakan adalah 
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/rbash
+/bin/dash
+/usr/bin/dash

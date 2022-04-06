@@ -1,0 +1,8 @@
+KARNEL 
+ cara mengetahui karnel saya mengetik uname -r 
+keluar penjelasan 5.14.0-1031-oem
+5 versi karnel
+14 major revision
+0 minor revision
+1031 bux fix
+oem informasi spesifik distribusi  

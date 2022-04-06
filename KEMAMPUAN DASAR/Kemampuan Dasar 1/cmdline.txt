@@ -1,0 +1,59 @@
+1. saya mencoba melihat derektori saya dengan cara mengetik “ls” dan muncul
+chami    Documents  karnel-linux.txt        Pictures  Templates
+chami2   Downloads  Music                   Public    Videos
+Desktop  evn.txt    packages.microsoft.gpg  snap
+Derektori saya adalah text yang berwarna biru berupa: chami, documents,chami2, download, music,desktop, pictures templates, public, videos.
+
+2. Tugas selanjutnya adalah menampilkan file tersembunyi
+
+saya mengetik “ls -a” dan keluar
+.              Documents               .pki
+..             Downloads               .profile
+.bash_history  evn.txt                 Public
+.bash_logout   .gnupg                  snap
+.bashrc        karnel-linux.txt        .ssh
+.cache         .local                  .sudo_as_admin_successful
+chami          .mozilla                Templates
+chami2         Music                   Videos
+.config        packages.microsoft.gpg  .vscode
+Desktop        Pictures                .wget-hsts
+
+3. Tugas selanjutnya adalah melihat file
+ cara melihatnya dengan cara mengetik “cat chami2 (nama file yang sudah ada)”
+lalu muncul
+cat: chami2: Is a directory
+
+4. cara menggabungkan dua file menjadi satu adalah dengan cara
+mengetik “cat chami (nama file pertama) chami2 ( nama file kedua) > umami (nama file baru)” maka akan keluar seperti ini 
+cat: chami: Is a directory
+cat: chami2: Is a directory
+
+5. cara menghapus file
+pertama tama saya mengetik “ls” untuk melihat derektori
+kemudian muncul 
+chami    Documents  karnel-linux.txt        Pictures  Templates  Videos
+chami2   Downloads  Music                   Public    umami
+Desktop  evn.txt    packages.microsoft.gpg  snap      umamicat:
+disini saya akan menghapus file umami dengan cara mengetik “rm umami (file yang akan dihapus)” setelah itu muncul
+chami    Documents  karnel-linux.txt        Pictures  Templates
+chami2   Downloads  Music                   Public    umamicat:
+Desktop  evn.txt    packages.microsoft.gpg  snap      Videos
+
+6. cara membuat sub direktori
+saya mengetik “ mkdir chami (nama file)”
+
+maka akan muncul file bernama chami di direktori home
+
+7. cara memindah file ke direktori
+saya mengetik mv Firs.sh(nama file) /home/chamida/TUGAS(nama folder yang akan ditempati) 
+jika sudah maka akan tersimpan 
+
+8. cara menyalin teks
+ketika menyalin text maka kita menggunakan ctl + c 
+yang berbeda adalah saat menempelkanny adi terminal dengan cara ctrl +shift+p maka akan keluar text yang kita kopi
+
+9.cara menginstall
+saya menggunakan  apt untuk menginstall git 
+saya mengetik sudo apt install git 
+
+10. ketika sudah selesai menggunakan terminal maka saya mengetik clear
