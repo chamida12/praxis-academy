@@ -1,23 +1,37 @@
-membuat folder baru menggunakan mkdir chami (nama folder)
-membuka folder yang telah dibuat menggunakan cd chami (nama folder)
-membuat repostory pada file lokal menggunakan git init
-membuat readme.txt untuk mengcommit pertama kali pada github 
-membuat file dengan mengketik touch README.txt
-untuk mengupdate status ketik git add README.txt
-untuk percobaan update status git commit -m "coba-coba" 
-[master (root-commit) bf1be20] coba-coba
+chamida@chamida-Vostro-3401:~$ mkdir rhymes
+chamida@chamida-Vostro-3401:~$ cd rhymes
+chamida@chamida-Vostro-3401:~/rhymes$ git init
+Initialized empty Git repository in /home/chamida/rhymes/.git/
+chamida@chamida-Vostro-3401:~/rhymes$ touch README.txt
+chamida@chamida-Vostro-3401:~/rhymes$ git add README.txt
+chamida@chamida-Vostro-3401:~/rhymes$ git commit -m 'First commit'
+[master (root-commit) 08ddbdb] First commit
  1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 coba-coba/README.txt
-git branch -M main
-git remote add origin https://github.com/chamida12/tugas.git
-git push -u origin main
-memasukan nama github dan password 
-selanjutnya ketika muncul :
-Enumerating objects: 4, done.
-Counting objects: 100% (4/4), done.
-Writing objects: 100% (4/4), 252 bytes | 126.00 KiB/s, done.
-Total 4 (delta 0), reused 0 (delta 0)
-To https://github.com/chamida12/tugas.git
- * [new branch]      main -> main
-Branch 'main' set up to track remote branch 'main' from 'origin'. maka sudah terupdate
+ create mode 100644 README.txt
+chamida@chamida-Vostro-3401:~/rhymes$ echo 'This repo is a collection of my favorite nursery rhymes.' >> README.txt
+chamida@chamida-Vostro-3401:~/rhymes$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.txt
 
+no changes added to commit (use "git add" and/or "git commit -a")
+chamida@chamida-Vostro-3401:~/rhymes$ git diff
+diff --git a/README.txt b/README.txt
+index e69de29..c83e022 100644
+--- a/README.txt
++++ b/README.txt
+@@ -0,0 +1 @@
++This repo is a collection of my favorite nursery rhymes.
+chamida@chamida-Vostro-3401:~/rhymes$ git add README.txt
+chamida@chamida-Vostro-3401:~/rhymes$ git commit -m 'Added project overview to README.txt'
+[master 8c62318] Added project overview to README.txt
+ 1 file changed, 1 insertion(+)
+
+	Bagian selanjutnya adalah mendownload dan mengaplod nya (Alice downloads favorite rhymes.)
+pada bagian ini terdapat tulidan not found 
+ 	BAGIAN MENYALIN FILE DAN MEMBERIKAN PERUBAHAN 
+ 
+	MENYALIN PROYEK DAN MERUBAH BEBERAPA HAL
+	
