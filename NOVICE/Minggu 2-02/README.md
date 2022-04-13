@@ -185,4 +185,26 @@ for([inisialisasi]; [kondisi]; [eksekusi iterasi]) {}
   
   
   
+  D.FOR ... IN STATEMENT
+  
+				const person = {namadepan:"John", namabelakang:"Doe", umur:25}; 
 
+				let txt = "";
+				for (let x in person) {
+				  txt += person[x] + " ";
+				} {console.log(txt)}
+				
+				
+  E.FOR IN DALAM ARRAYS
+  
+  
+			       var a=[5,4,3,2,1];       // pembuatan array
+				var b;                   // variabel penampung
+				for (b in a)
+				{
+  				 console.log("Isi array a adalah: "+a[b]);
+				}
+  
+  F. ARRAY
+ Pada javascript, array dapat kita buat dengan tanda kurung siku ([...]).
+  
