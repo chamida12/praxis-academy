@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       body {
+      background-color: darkseagreen;
+    }
+      h2 {
+        text-align: center;
+
+      }
+
+      p {
+        text-align: justify;
+      }
+    </style>
+  </head>
+<body>
+
+<h2>JavaScript For Loop (Menu Bukber)</h2>
+
+<p id="demo"></p>
+
+<script>
+  const Bukber = ["Pecel", "Boba", "Seblak", "Geprek"];
+  let i, len, text;
+  for (i = 0, len = Bukber.length, text = ""; i < len; i++) {
+    text += Bukber[i] + "<br>";
+  }
+  document.getElementById("demo").innerHTML = text;
+  </script>
+
+</body>
+</html>
