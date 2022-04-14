@@ -1,0 +1,48 @@
+LATIHAN ;
+
+
+1. Mengurutkan nomer dengan soal berikut 
+   Sample numbers : 0, -1, 4
+   Output : 4, 0, -1 
+
+PENYELESAIAN :
+			var x= 0;
+			var y=-1;
+			var z= 4;
+			if (z>x && z>y)
+			{
+				if (x>y)
+				{
+				    console.log(z + ", " + x + ", " +y);
+				}
+				else
+				{
+				    console.log(z + ", " + y + ", " +x);
+				}
+			}    // 4, 0, -1
+			
+			
+2.     Sample numbers : -5, -2, -6, 0, -1
+	Output : 0 
+	
+	
+PENYELESAIAN:
+			a=-5;
+			b=-2;
+			c=-6;
+			d= 0;
+			f=-1;
+
+			if (b>a && b>c && b>d && b>f)
+			{
+			    console.log(b);
+			}
+
+			else if (d>a && d>c && d>b && d>f)
+			{
+			    console.log(d);
+			}
+			else
+			{
+			    console.log(f);
+			}
