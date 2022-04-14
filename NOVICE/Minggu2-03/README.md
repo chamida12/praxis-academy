@@ -58,5 +58,92 @@
   
    				<script src="namafile.js"></script>
    
+   -Operasi penjumlahan menggunakan function 
    
-				  
+				   function tambah (a,b){
+				  return a + b ;
+				}
+
+				var a =parseInt(prompt("masukan nilai1:"));
+				var b = parseInt(prompt("masukan nilai2 :"))
+				var hasil = tambah(a,b);
+				console.log(hasil);
+				
+  
+  sama seperti sebelumnya , bahwa kode function kali ini bisa dijalankan dengan membuka html 
+  parseInt untuk mengubah string ke interger. 	
+  
+  
+  - memasukkan expresi dalam argumen.
+  
+				  function tambah (a,b){
+				      return a + b ;
+				    }
+				    
+				    var a =parseInt (prompt("masukan nilai1:"));
+				    var b = parseInt(prompt("masukan nilai2 :"))
+				    var hasil = tambah(a*4,b*5);
+				    console.log(hasil);
+				    
+				    
+   - memasukan function dalam argumen.
+   			  
+   			function kali(a,b){
+			      return a * b ;
+			    }
+
+			function tambah (c,e){
+			  return c + e;
+			}
+
+			var hasil = tambah(kali(5,5),kali(3,2));
+			console.log(hasil);
+			    
+			// 31
+			
+			
+  4. ARGUMENTS
+  (array yang berisi nilai yang dikirimkan saat fungsi dipanggil)
+  argumens beda dengan argumen di atas.
+  
+  
+  
+			  function tambah(){
+			  var hasil = 0;
+			  for( var i = 0; i<arguments.length; i++){
+			    hasil += arguments[i]
+			  }
+			  return hasil;
+			}
+
+			var coba = tambah(1,2,3,4);
+			console.log (coba);
+			
+			
+  untuk mengatasi tidak adanya parameter
+  
+  5. Recursion ( memanggil dirinya sendiri)
+  pada pemanggilan recursion harus ada perimtaan berhenti agar bisa berhenti. hal ini disebut base case
+  - Base Case ( Kondisi akhir dari rekursif yang menghasilkan nilai 
+  
+  
+  -CONTOH RECURSION TANPA BASE CASE 
+  			
+  			
+  			function tampilAngka(n) {
+  			    console.log(n);
+  			    return tampilAngka(n-1)}
+  			    
+  			    tampilkan angka (10);
+  			    
+  -CONTOH RECURSTION DENGAN BASE CASE 
+  
+				function cetakangka(n) {
+				  if( n === 10) {
+				    return;  // base case adalah angka 10
+				  }
+				  console.log(n);
+				  cetakangka(n-1); //untuk hitung mundur menggunakan kurang & untuk hitung normal menggunakan +
+				}
+				cetakangka(10);
+
