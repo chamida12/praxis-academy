@@ -1,4 +1,4 @@
-OBJECT
+1.OBJECT
 
 
 		
@@ -67,4 +67,32 @@ sebagaimana pembuatan object di atas
 			}
 
 			var mhs2 = buatobjectmhs('chami','adadeh@gmail.com', 'fiqh ushul fiqh');
+			
+			
+2.ITERABLELS<BELUM>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.MAP & SET
+
+A.Menggunakan objek sebagai kunci adalah salah satu fitur Map.
+
+			let chami = {nama : "chami"};
+			let mapchami = new Map ();
+			mapchami.set (chami,123);
+			alert (mapchami.get(chami));
+			
+dapat dichek menggunakan console.
 
