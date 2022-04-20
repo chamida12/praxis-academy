@@ -135,3 +135,46 @@ Pemrograman berbasis prototipe adalah gaya pemrograman berorientasi objek di man
 			"Halo ${this.nama, semoga mimpi indah!"	
 			
 
+
+5.METODE OBJECT.ASSIGN()
+
+object.assign () : menyalin semua properti dari satu atau lebih sumber objek ke target.
+
+			const kamu = { a: 1, b: 2 };//object sumber untuk kamu(objek target)
+			const aku = { c: 4, d: 5 };
+
+			const retrunedBalik = Object.assign(kamu, aku);//obejct target dari objek sumber berupa (kamu,aku)
+
+			console.log(kamu);
+			// maka akan keluar Object { a: 1, b: 2, c: 4, d: 5 }
+
+			console.log(retrunedBalik);
+			// maka akan keluar Object { a: 1, b: 2, c: 4, d: 5 }
+			
+
+-Menggabungkan  Objek
+
+			const bunga1 = {a : 1};
+			const bunga2 = {b : 2};
+			const bunga3 = {c : 3};
+
+
+			const jumlah = Object.assign(bunga1,bunga2,bunga3);
+			console.log (bunga1);//{ a: 1, b: 2, c: 3 } hasilnya akan otomatis sudah tersalin
+			
+			
+-Menggabungakan objek dengan properti yang berbeda.
+
+			//properti dibuat bebeda dalam o1,o2,o3.
+			const o1 = { a: 1, b: 1, c: 1 };
+			const o2 = { b: 2, c: 2 };
+			const o3 = { c: 3 };
+
+			const obj = Object.assign({}, o1, o2, o3);
+			console.log(obj); // { a: 1, b: 2, c: 3 }
+			
+			
+Disini properti yang di ambil sebagimana di atas.
+
+		
+
