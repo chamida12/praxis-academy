@@ -238,3 +238,37 @@ hasilnya adalah :
 			
 			
 Disini saya membuat objek 'Orang1' & 'Orang2' menggunakan fungsi konstruktor Orang. Ketika kita memanggil Orang1.kalkulatorUmur() maka pertama-tama yang akan di chek ada di objek1 atau tidak. jika ada maka prototipe berupa Orang.prototype.kalkulatorUmur akan mewarisakan properti yang dia punya sehingga dapat mengkalkulasi umur seseorang.
+
+
+contoh lain memanggil menggunakan greeting:
+
+			function Person(name) {
+			    this.name = name;
+			}
+			Person.prototype.aku = function() {
+			    return "Hi, I'm " + this.name + "!";
+			}
+			let p1 = new Person('chami');
+			let greeting = p1.aku();
+			console.log(greeting);
+
+
+
+Contoh Lain :
+
+			function Karyawan(namaDepan,namaBelakang)  
+			{  
+			  this.namaDepan = namaDepan;
+			  this.namaBelakang = namaBelakang;
+			}  
+			  
+			Karyawan.prototype.namaLengkap=function()  
+			  {
+			    return this.namaDepan+" "+this.namaBelakang; 
+			  } 
+			  
+			var Karyawan1=new Karyawan("Syafak ","Udin");  
+			var Kaeyawan2=new Karyawan("Nissa", "Anisa");  
+
+			console.log(Karyawan1.namaLengkap());//cara memanggil 
+
