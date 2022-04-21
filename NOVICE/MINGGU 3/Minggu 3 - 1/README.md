@@ -175,6 +175,66 @@ object.assign () : menyalin semua properti dari satu atau lebih sumber objek ke 
 			
 			
 Disini properti yang di ambil sebagimana di atas.
+	
+6. FUNGSI KONSTRUKTOR (MEMBUAT OBJEK MENGGUNKAN FUNGSI)
 
-		
+sama seperti minggu ke-2 hari kelima tapi kali ini saya menggunakan const untuk membuat objek buka var.
+				
+				function Person(awal, akhir, umur,mata) {
+				    this.awalNama = awal;
+				    this.akhirNama = akhir;
+				    this.umur = umur;
+				    this.warnaMata = mata;
+				  }
 
+				  const Ibuku = new Person("susan", "Halimah", 40, "coklat");
+				const Bapakku = new Person("Ahmad", "Sahal", 48, "hitam");
+				
+contoh lain ;
+
+				function Hewan( nama ){
+				    this.nama = nama;
+				    this.getName = function(){
+					return 'Hewan ini memiliki nama =>' + this.nama
+				    }
+				}
+				var a = new Hewan('Monyet');
+				console.log('a object ==>', a );
+				console.log('a.getName() ==>', a.getName());
+				console.log('a.constructor === Hewan', a.constructor === Hewan);
+				
+
+
+
+hasilnya adalah :
+
+			// a object ==> Hewan { nama: 'Monyet', getName: [Function] }
+			// a.getName() ==> Hewan ini memiliki nama =>Monyet
+			// a.constructor === Hewan true
+			
+			
+			
+-Pewarisan yang dilakukan prototype
+
+			cara membuat kalkulator umur :
+
+			function Orang(Nama, job, tahunLahir){   
+			    this.Nama= Nama;
+			    this.job= job;
+			    this.tahunLahir= tahunLahir;
+			}
+			Orang.prototype.kalkulatorUmur= function(){
+			    console.log('Usia saat ini : '+(2022- this.tahunLahir));
+			}
+			// console.log(Orang.prototype);
+
+			let Orang1 = new Orang('chami','Selebgram', 1999);
+			// console.log(Orang1)
+			let Orang2 = new Orang('Anis','Gamers', 1997);
+			// console.log(Orang2)
+
+			Orang1.kalkulatorUmur();
+			Orang2.kalkulatorUmur();
+			
+			
+Disini saya membuat objek 'Orang1' & 'Orang2' menggunakan fungsi konstruktor Orang. Ketika kita memanggil Orang1.kalkulatorUmur() maka pertama-tama yang akan di chek ada di objek1 atau tidak. jika ada maka prototipe berupa Orang.prototype.kalkulatorUmur akan mewarisakan properti yang dia punya sehingga dapat mengkalkulasi umur seseorang.
