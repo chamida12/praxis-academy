@@ -25,3 +25,32 @@ Ini adalah contoh class expresssion yang saya  tidak beri nama. yang mana dapat 
 		console.log(persegiPanjang.name) 
 		
 Ini adalah contoh class expression yang diberi nama berupa persegipanjang2.Maka yang keluar adalah nama dari class expression tersebut.
+
+
+2. Prototype methods
+		
+		class rectangle {
+		    constructor(tinggi, lebar){
+			this.tinggi = tinggi;
+			this.lebar = lebar;
+		    
+		}
+		get kalkulasi(){
+		    return this.kalkulasiluas();
+		}
+
+		 kalkulasiluas(){
+		    return this.panjang * this.tinggi;
+		}
+		 }
+
+		const nilai = new rectangle(10, 10);
+
+
+3.STATIS 
+
+
+
+
+		console.log(nilai.kalkulasi);
+
