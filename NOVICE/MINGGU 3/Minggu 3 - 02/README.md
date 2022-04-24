@@ -81,7 +81,7 @@ Dan jika ingin memanggilnya di terminal bisa menggunakan console.log :
 
 			console.log("Saya sudah Mondok selama " + Santri1.chek(tahunMasuk) + " tahun.");
 
- 	A.CLASS EXSPRESSION
+ 	C.CLASS EXSPRESSION
  	
 	 	let persegiPanjang = class {
 	   	 constructor(tinggi,lebar){
@@ -106,7 +106,79 @@ Ini adalah contoh class expresssion yang saya  tidak beri nama. yang mana dapat 
 Ini adalah contoh class expression yang diberi nama berupa persegipanjang2.Maka yang keluar adalah nama dari class expression tersebut.
 
 
-2. Prototype methods
+2.Class Inheritance
+
+Untuk membuat pewarisan kelas, gunakan extends kata kunci.
+
+Kelas yang dibuat dengan pewarisan kelas mewarisi semua metode dari kelas lain:
+
+		class santri {
+		  constructor(nama){
+		    this.nama = nama;
+		  }
+		  chek() {
+		    return ' Nama saya' + this.nama;
+		  }
+		}
+
+		class gender extends santri{ //extends untuk pewarisan
+		  constructor(nama,jenis){
+		    super(nama); //kita memanggil metode konstruktor induk dan mendapatkan akses ke properti dan metode induk.
+		    this.gender = jenis;
+		  }
+		run (){
+		  return this.chek() + ',saya adalah seorang' + this.gender;
+		}
+		}
+
+		let santri1 = new gender(" ummu"," Perempuan");
+		console.log (santri1.run());
+
+		//output
+		//Nama saya ummu, saya adalah seorang perempuan
+		  
+
+3. MENAMBAKAN GETTER DAN SETTER KEDALAM CLASS
+
+
+		class Motor{
+		  constructor(Merk) {
+		    this.namaMotor = Merk;
+
+		    
+		  }
+		  get nama(){
+		    return this.namaMotor;
+		  }
+		  set nama(A){
+		    this.namaMotor = A;
+
+		  }
+		}
+		let motorku = new Motor ("Honda")
+
+		console.log(motorku.nama);
+		
+		
+Kita dapat menggunakan setter untuk mengganti namamerk tanpa menghapusnya dengan cara :
+
+		motorku.nama = "Scoopy";
+		
+Dapat diletakkan dibawah let.
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Prototype methods
 		
 		class rectangle {
 		    constructor(tinggi, lebar){
