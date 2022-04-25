@@ -166,19 +166,26 @@ Kita dapat menggunakan setter untuk mengganti namamerk tanpa menghapusnya dengan
 		
 Dapat diletakkan dibawah let.
 
+4. CLASS STATIS
+
+		class Buah {
+		  constructor(nama) {
+		    this.nama = nama;
+		  }
+		  static hello(x) {
+		    return "Ini " + x.nama;
+		  }
+		}
+
+		let Buahku = new Buah("Melon");
+		console.log(Buah.hello(Buahku)); //Ini Melon
 
 
 
 
 
 
-
-
-
-
-
-
- Prototype methods
+5. Prototype methods
 		
 		class rectangle {
 		    constructor(tinggi, lebar){
@@ -200,9 +207,41 @@ Dapat diletakkan dibawah let.
 
 
 
+6. Menggunakan Object.setPrototypeOf(): 
+
+		const Hewan = {
+		  makan() {
+		    console.log(`${this.name} memakan daging.`);
+		  }
+		};
+
+		class Anjing {
+		  constructor(name) {
+		    this.name = name;
+		  }
+		}
+
+
+		Object.setPrototypeOf(Anjing.prototype, Hewan);
+
+		let d = new Anjing('Helly');
+		d.makan(); //Helly memakan daging.
 
 
 
 
+7. Class fields
+“Class fields” adalah sebuah sintaks yang memungkinkan untuk menambahkan properti apa pun.
+
+
+		class User {
+		  name = "John";
+
+		  sayHi() {
+		    alert(`Hello, ${this.name}!`);
+		  }
+		}
+
+		new User().sayHi(); 
 		
-
+Undang dengan cara sambungkan ke html.
