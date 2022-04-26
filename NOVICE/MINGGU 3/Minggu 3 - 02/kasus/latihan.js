@@ -23,6 +23,8 @@ export default class Deck {
     return this.card.length
   }
 
+ 
+
   shuffle() {
     for(let i = this.numberOfCard - 1; i > 0; i--){
       const newIndex = Math.floor(Math.random() * (i + 1))
@@ -38,13 +40,13 @@ class Card {
     this.value = value
   }
   get color(){
-    return this.suit === '♥' || this.suit === '♥' ? 'black' : 'red'
+    return this.suit === "♥" || this.suit === "♥" ? "black" : "red"
   }
   getHTML(){
     const cardDiv = document.createElement('div')
     cardDiv.innerText = this.suit
     cardDiv.classList.add("card", this.color)
-    cardDiv.dataset.value ='${this.value} ${this.suit}'
+    cardDiv.dataset.value = (this.value) +  (this.suit)
     return cardDiv
   }
 }
