@@ -1,4 +1,4 @@
-FUNCIONAL PROGRAMMING
+1. FUNCIONAL PROGRAMMING
 
 Pendekatan lain yang cukup populer di dalam pengembangan perangkat lunak.
 Dalam funcional programing terdapat konsep yaitu :
@@ -72,7 +72,9 @@ catatan : data atau berapa jumlah teh dikirimkan sebagai parameter terakhir.
 			  
 			  
 						 
-Terdapat istilah-istilah yang ada dalam functional programing.
+Terdapat istilah-istilah yang ada dalam functional programing:
+
+
 A.CALLBACK
  sebuah function yang kirim sebagai parameter kepada function yang lain atau dikembalikan sebagain retrun value dari sebuah function.
  
@@ -81,3 +83,80 @@ function yang menerima function sebagai argumen atau mengembalikan function seba
 
 C. LAMBDA
 Sebuah function dikirimkan atau dikembalikan dari fincion yang lain.
+
+D. Menghindari Mutasi(perubahan dalam functional0 dan side effects(hasil yang tidak kita inginkan)
+
+ latihan :
+ Melengkapi kode di dalam function  agar mengembalikan nilai dari fixvalue di + satu.
+ 
+ 
+ 		 var fixedvalue = 4
+ 		 function incrementer (){
+ 		 }
+ 		 
+ 		 
+ melengkapi kode diatas dengan menambahkan 1. cara yang benar adalah :
+ 
+
+		var fixvalue = 4;
+		 function penjumlahan (){
+		     return fixvalue +1;
+		 }
+
+		 console.log(penjumlahan());
+		 
+hasilnya adalah 5. berbeda jika kita menmabahkan seperti ini;
+
+			var fixvalue = 4;
+			 function penjumlahan (){
+			     return fixvalue ++;
+			 }
+
+			 console.log(penjumlahan());
+			 
+			 
+Maka hasilnya adalah 4. 
+
+
+2. CURRYING 
+
+Perbedaan function dan curried versi function. Di bawah ini adalah function biasa :
+
+		function multiply(a, b, c) {
+		    return a * b * c;
+		}
+		console.log (multiply(1,2,3)); //6
+		
+		
+Selanjutnya adalah pembuatan curried versi function dengan output yang sama:
+
+
+		function multiply(a) {
+		    return (b) => {
+			return (c) => {
+			    return a * b * c
+			}
+		    }
+		}
+
+		const mul1 = multiply(1);
+		const mul2 = mul1(2);
+		const result = mul2(3);
+		console.log(result); //6
+		
+Selanjutnya menggunakan currying untuk membuat diskon untuk  pelanggan favorit. 
+
+Mencari jumlah potongan harga dari 10 % diskon.
+			
+		function diskon(diskon) {
+		    return (harga) => {
+			return harga * diskon;
+		    }
+		}
+		const sepuluhpersen = diskon(0.1);
+		console.log(sepuluhpersen(500));
+		
+
+		
+
+
