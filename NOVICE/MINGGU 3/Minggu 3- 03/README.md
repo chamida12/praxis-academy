@@ -120,6 +120,8 @@ Maka hasilnya adalah 4.
 
 2. CURRYING 
 
+Currying merupakan sebuah proses mengubah fungsi yang membutuhkan banyak argumen menjadi fungsi yang membawa mereka satu-persatu.
+
 Perbedaan function dan curried versi function. Di bawah ini adalah function biasa :
 
 		function multiply(a, b, c) {
