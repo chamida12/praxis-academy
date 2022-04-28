@@ -2,6 +2,27 @@ A. CALLBACK
 Sebuah funcion yang dikrimkan sebagai parameter ke function yang lain. Ada yang menyebutkan Callback adalah sebuah function yang dieksekusi ketika function lain selesai dijalankan.
 
 
+		const mhs = [
+		    {
+			"nama" : " Ike Adeli",
+			 "Jurusan" : "Akutansi",
+			 "Alamat" : "Pati",
+		    },
+		    {
+			"nama" : "Umami Khamida Di Milinnia",
+			 "Jurusan" : "Fiqh Ushul Fiqh",
+			 "Alamat" : "Jepara",
+		    },
+		    {
+			"nama" : "Nissa ",
+			"Jurusan" : "Akutansi",
+			"Alamat" : "Pati",
+		    },
+		];
+		   mhs.forEach(m => console.log(m.nama)); // cara ini memanggil menggunakan higher order function yangmana parameter yang dipanggil berupa function juga.
+		   
+
+
 Syncrhonus Callback:
 
 		function halo(nama) {
