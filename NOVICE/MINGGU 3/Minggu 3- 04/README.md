@@ -93,4 +93,4 @@ Contoh Promise yabg lain :
 
 		//Jika memanggilnya demikian maka tidak akan di menampilkan apa yang diproses
 		//selesai menunggu!
-// OK!Ditepati setelah beberapa waktu!
+	 	// OK!Ditepati setelah beberapa waktu!
