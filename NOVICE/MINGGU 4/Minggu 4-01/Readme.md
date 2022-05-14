@@ -7,7 +7,7 @@ Document Object Model ( DOM ) adalah representasi data dari objek yang terdiri d
  
    * getElementById ()
    * getElementsByTagName ()
-   * getElementsByClassname ()
+   * getElementsByClassName ()
    * querySelector ()
    * querySelectorAll () 
    
@@ -70,3 +70,41 @@ Lalu saya bisa menggunakan DOM getElementById ()  dan dapat memanipulasi judul l
 
 		const judul = document.getElementById('judul');
 		judul.style.color = 'yellow'
+		
+Jika kita membuka inspect pada document dan mengetik judul pada console maka akan keluar :
+
+<h1 id="judul" style="color: yellow; background-color: purple;">
+
+
+		
+		
+	*getElementsByTagName () - mengembalikan HTMLColection. Dengan contoh html  yang sama kita akan mengembalikan nilai element p dari javascript.
+	
+		const p = document.getElementsByTagName('p');
+	
+	
+Maka yang akan keluar adalah :
+
+		HTMLCollection { 0: p.p1, 1: p.p2, 2: p.p3, 3: p, 			length: 4 }
+		
+		
+	* getElementsByClassName () - Mengembalikan HTMLColection
+Menggunakan HTML yang sama kita mencoba memanggil class p1 :
+
+		const p1 = document.getElementsByClassName ('p1');
+		    p1[0].innerHTML = ' Pengubahan menggunakan
+		    Javascript';
+		    
+Maka yang akan keluar  di console adalah :
+
+
+		p1
+		HTMLCollection { 0: p.p1
+		, length: 1 }
+		​
+		0: <p class="p1">
+		​
+		length: 1
+		​
+		<prototype>: HTMLCollectionPrototype { item: 	
+		item(), namedItem: namedItem(), length: Getter, … }
