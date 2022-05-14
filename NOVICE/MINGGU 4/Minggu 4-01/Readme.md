@@ -19,27 +19,27 @@ Document Object Model ( DOM ) adalah representasi data dari objek yang terdiri d
 		    <!DOCTYPE html>
 		<html lang="en">
 		<head>
-		  <meta charset="UTF-8">
-		  <title>Dom Selection</title>
-		  <style>
-		    * { 
-			border: 2px solid #dedede; 
-			padding: 15px; 
-			margin: 15px; 
-		    }
-		    html { 
-		      margin: 0;
-		      padding: 0;
-		    }
-		    body { 
-		      max-width: 600px;
-		      margin: 30px auto;
-		      font-family: sans-serif;
-		      color: #333;
-		    }
-		  </style>
-		</head>
-		<body>
+			  <meta charset="UTF-8">
+			  <title>Dom Selection</title>
+			  <style>
+			    * { 
+				border: 2px solid #dedede; 
+				padding: 15px; 
+				margin: 15px; 
+			    }
+			    html { 
+			      margin: 0;
+			      padding: 0;
+			    }
+			    body { 
+			      max-width: 600px;
+			      margin: 30px auto;
+			      font-family: sans-serif;
+			      color: #333;
+			    }
+			  </style>
+			</head>
+			<body>
 
 		  <h1 id="judul">Hello World</h1>
 		  <div id="container">
