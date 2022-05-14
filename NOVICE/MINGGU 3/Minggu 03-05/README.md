@@ -2,6 +2,7 @@ ERROR HANDLING
 
 
 A.Error Handling Dalam Promise.
+Menggunakan Try dan Catch
 
 Error Handling dalam promise dapat ditangkap menggunakan .then dan .catch seperti berikut 
 
