@@ -78,7 +78,7 @@ Jika kita membuka inspect pada document dan mengetik judul pada console maka aka
 
 		
 		
-  *getElementsByTagName () - mengembalikan HTMLColection. Dengan contoh html  yang sama kita akan mengembalikan nilai element p dari javascript.
+  - getElementsByTagName () - mengembalikan HTMLColection. Dengan contoh html  yang sama kita akan mengembalikan nilai element p dari javascript.
 
                const p = document.getElementsByTagName('p');
 	
@@ -88,7 +88,7 @@ Maka yang akan keluar adalah :
 		HTMLCollection { 0: p.p1, 1: p.p2, 2: p.p3, 3: p, 			length: 4 }
 		
 		
-* getElementsByClassName () - Mengembalikan HTMLColection
+ - getElementsByClassName () - Mengembalikan HTMLColection
 Menggunakan HTML yang sama kita mencoba memanggil class p1 :
 
 		const p1 = document.getElementsByClassName ('p1');
@@ -110,7 +110,7 @@ Maka yang akan keluar  di console adalah :
 		item(), namedItem: namedItem(), length: Getter, … }
 		
 		
-	* querySelector ()
+- querySelector ()
 
 Menggunakan HTML yanng sama kita mencoba mengambil paragraf ke 4 dari javascript :
 
@@ -119,7 +119,7 @@ Menggunakan HTML yanng sama kita mencoba mengambil paragraf ke 4 dari javascript
 Tugas ini berbunyi carikan saya element yang idnya b dan carikan paragraf. Kode ini hanya bisa membuka dan mengubah satu element saja. 
 
 
-	  * querySelectorAll () 
+-  querySelectorAll () 
 	  
 Jika ingin  mengubah semua element secara bersamaan menggunakan kode di atas, contoh :
 
