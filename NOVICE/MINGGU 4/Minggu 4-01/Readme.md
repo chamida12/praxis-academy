@@ -175,3 +175,62 @@ Jika ingin mewarnai seluruh  element p maka harus melakukan looping.
 			h2Baru.appendChild(teksH2Baru);
 
 			sectionB.replaceChild(h2Baru,p4);
+			
+			
+4. EVENT 
+   event pada javascript mempresentasikan sebuah kejadian yang terjadi di dalam DOM, kejadian tersebut bisa dilakukan di user.
+   
+   
+   
+   Membuat event Handler ada 2 cara :
+   1. inlie HTML attribute
+   2. element method
+   
+   Dengan contoh html yang sama menuliskan text berikut di javascript agar kolom yang di klik mengeluarkan warna biru. contoh menggunakan method :
+   
+		   const p3 = document.querySelector('.p3');
+		function ubahWarna (){
+		    p3.style.backgroundColor = 'lightblue';
+
+		}
+
+		const p2 = document.querySelector ('.p2');
+		p2.onclick = ubahWarna;
+		
+		
+   3. addEventListener 
+   
+   cara penggunaan addEventListener untuk menambahkan kolom saat paragraf ke-empat di klik.Tetap menggunakan Html Latihan.html :
+   
+   
+		   const p3 = document.querySelector('.p3');
+		function ubahWarna (){
+		    p3.style.backgroundColor = 'lightblue';
+
+		}
+
+		const p2 = document.querySelector ('.p2');
+		p2.onclick = ubahWarna;
+
+		const p4 = document.querySelector('section#b p');
+		p4.addEventListener('click', function(){
+		    const ul =document.querySelector('section#b ul');
+		    const liBaru = document.createElement('li');
+		    const textLiBaru = document.createTextNode('Baru');
+		    
+		    liBaru.appendChild(textLiBaru);
+		    ul.appendChild(liBaru);
+		})
+		
+3. PERBEDAAN ANTARA EVENT HENDLER & ADDEVENTLISTENER
+
+		 const p3 = document.querySelector('.p3');
+		p3.onclick = function(){
+		    p3.style.backgroundColor = 'lightblue';
+
+		}
+		p3.onclick = function(){
+		    p3.style.color = 'red'
+		}
+  Jika di tulis demikian menggunakan event hendler  maka perintah pertama akan ditimpa dengan perintah kedua.
+
