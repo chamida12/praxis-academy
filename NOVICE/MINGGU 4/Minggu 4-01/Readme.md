@@ -108,3 +108,36 @@ Maka yang akan keluar  di console adalah :
 		​
 		<prototype>: HTMLCollectionPrototype { item: 	
 		item(), namedItem: namedItem(), length: Getter, … }
+		
+		
+	* querySelector ()
+
+Menggunakan HTML yanng sama kita mencoba mengambil paragraf ke 4 dari javascript :
+
+		const p4 = document.querySelector (' #b p');
+		
+Tugas ini berbunyi carikan saya element yang idnya b dan carikan paragraf. Kode ini hanya bisa membuka dan mengubah satu element saja. 
+
+
+	  * querySelectorAll () 
+	  
+Jika ingin  mengubah semua element secara bersamaan menggunakan kode di atas, contoh :
+
+		const p = document.getElementsByTagName ('p');
+		
+		
+Hasil yang akan dikeluarkan :
+
+
+		HTMLCollection { 0: p.p1, 1: p.p2, 2: p.p3, 3: p, length: 4 } //yang dikembalikan pada console
+
+Jika ingin mewarnai seluruh  element p maka harus melakukan looping.
+
+		const p = document.getElementsByTagName ('p');
+		for (let i = 0; i < p.length; i++){
+		    p[i].style.backgroundColor = ' Yellow';
+		}
+		
+		
+		
+
