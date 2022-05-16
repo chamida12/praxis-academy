@@ -94,3 +94,84 @@ Jika ingin mewarnai seluruh  element p maka harus melakukan looping.
 		
 		
 2. MANIPULASI ELEMENT
+
+  - element.innerHTML - Untuk mengubah isi dari sebuah teks yang telah di seleksi.
+  
+		  const judul = document.getElementById('judul');
+		judul.innerHTML = '<em> Tentang Chami </em>';
+		// maka bagian judul yang awalnya adalah Hello Word akan diubah secara otomatis. menambahkan <em></em> agar hurufnya 			miring
+		
+		
+ -  element.style.<properticss>
+ 
+ 
+ 
+		 const judul = document.querySelector ('#judul');
+		judul.style.color =  'lightblue';
+		judul.style.backgroundColor = 'silver';
+		
+		
+3. MANIPULASI NODE
+  
+  Beberapa method javascript :
+  - document.createElement ()
+  - document.createTextNode ()
+  - node.appendChild ()
+  - node.insertBefore ()
+  - parentNode.removeChild ()
+  - parentNode.replaceChild ()
+  
+  
+  Menggunakan node.appendChild ():
+  
+		  // menambahkan paragraf baru menggunakan DOM javascript 
+		const pBaru = document.createElement('p'); // membuat paragraf baru
+		const text = document.createTextNode ('Paragraf Baru'); // membuat text yang ada di dalam paragraf.
+
+		//menyimpan text kedalam paragraf 
+		pBaru.appendChild(text);
+		//simpan pBaru di akhir section A
+		const sectionA = document.getElementById('a');
+		sectionA.appendChild(pBaru); 
+		
+		
+  Menggunakan  node.insertBefore () :
+  
+  
+  
+			//membuat element baru
+			const liBaru = document.createElement('li');
+			const textLibaru = document.createTextNode('Item Baru');
+
+			liBaru.appendChild(textLibaru);
+
+			const ul = document.querySelector('section#b ul');
+			const li2 = ul.querySelector('li:nth-child(2)');
+
+			ul.insertBefore(liBaru,li2);
+			
+			
+  - parentNode.removeChild () - menghapus secation yang dipilih dengan cara :
+  			
+  			// mencari section yang akan di hapus
+			const sectionA = document.getElementById('a');
+
+			const link = document.getElementsByTagName('a')[0];// membuat element yang akan dihapus
+			sectionA.removeChild(link);//menghapus link
+
+
+    - parentNode.replaceChild () - membuat section baru.
+  
+
+
+
+
+			const sectionB =  document.getElementById ('b');
+			const p4 = sectionB.querySelector('p');
+
+			const h2Baru = document.createElement('h2');
+			const teksH2Baru = document.createTextNode ('Judul Baru!');
+
+			h2Baru.appendChild(teksH2Baru);
+
+			sectionB.replaceChild(h2Baru,p4);
