@@ -222,7 +222,7 @@ Jika ingin mewarnai seluruh  element p maka harus melakukan looping.
 		    ul.appendChild(liBaru);
 		})
 		
-3. PERBEDAAN ANTARA EVENT HENDLER & ADDEVENTLISTENER
+3. PERBEDAAN ANTARA EVENT HENDLER & EVENT LISTENER
 
 		 const p3 = document.querySelector('.p3');
 		p3.onclick = function(){
@@ -233,4 +233,21 @@ Jika ingin mewarnai seluruh  element p maka harus melakukan looping.
 		    p3.style.color = 'red'
 		}
   Jika di tulis demikian menggunakan event hendler  maka perintah pertama akan ditimpa dengan perintah kedua.
+  
+		  
+		  
+		  
+Jika menggunakan Event Listener :
+
+		  const p3 = document.querySelector('.p3');
+
+		p3.addEventListener('click',function(){
+		    p3.style.backgroundColor = 'lightblue';
+		});
+		p3.addEventListener('click',function(){
+			p3.style.color = 'red'
+
+		});
+
+
 
