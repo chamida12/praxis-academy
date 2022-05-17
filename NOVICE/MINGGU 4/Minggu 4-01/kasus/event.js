@@ -1,12 +1,4 @@
-// $(function(){
-//     var baris = 10;
-//     var kotak = 10;
-//     var array = [];
-//     var even = true;
-//     function buatKOtak (root){
 
-//     }
-// })
 
 $(function () {
     var baris = 10;
