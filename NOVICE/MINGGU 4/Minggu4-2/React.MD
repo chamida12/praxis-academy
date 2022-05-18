@@ -13,5 +13,52 @@ Cara install reactjs:
 
 --COMPONENT REACTJS ---
 
+Pada folder REACTJS saya membuat komponen pada folder Compenent dengan nama file MyButton dengan code berikut :
+
+		const myButton = () => {
+		    return (
+			<div>
+			     <button>Click Disini</button>
+			 </div>
+		    )
+		}
+
+		export default myButton;
+		
+
+Dan disambungkan dengan App.js di folder yang sama dengan code berikut :
+
+		import logo from './logo.svg';
+		import './App.css';
+		import MyButton from './Component/MyButton'; //import untuk menyambungkan ke file mybutton
+
+		const App = () => {
+		  return (
+		    <div className="App">
+		      <header className="App-header">
+			<img src={logo} className="App-logo" alt="logo" />
+			<p>
+			  First Proyek Dong.
+			</p>
+			<a>
+			  
+			    Website
+			</a>
+			<MyButton/>
+		       
+			
+		      </header>
+		    </div>
+		  );
+		}
+
+		export default App;
+
+
+
+
+
+
+
 
 
