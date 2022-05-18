@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import MyButton from './Component/MyButton';
 
 const App = () => {
   return (
@@ -13,6 +14,8 @@ const App = () => {
           
             Website
         </a>
+        <MyButton/>
+       
         
       </header>
     </div>
