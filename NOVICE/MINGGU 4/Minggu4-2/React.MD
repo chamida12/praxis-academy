@@ -124,14 +124,14 @@ Disambungkan menggunakan :
 		import Navbar from './Component/Navbar';
 		
 		
---- STATE REACT ---
+	--- STATE REACT ---
 
 State adalah sebuah object untuk menyimpan data pada React dan akan 
 di render atau muat ulang ketika data mengalami perubahan.
 
 
 
---- PROPS REACT ---
+	--- PROPS REACT ---
 
 
 
