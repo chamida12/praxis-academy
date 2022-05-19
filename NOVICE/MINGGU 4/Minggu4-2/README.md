@@ -129,6 +129,137 @@ Disambungkan menggunakan :
 State adalah sebuah object untuk menyimpan data pada React dan akan 
 di render atau muat ulang ketika data mengalami perubahan.
 
+--- PROPS REACT ---
+
+
+
+			import logo from './logo.svg';
+			import './App.css';
+			import MyButton from './Component/MyButton';
+			import Navbar from './Component/Navbar';
+			import Footer from './Component/ClassComponent';
+
+			const App = () => {
+			  const navHeading = "Navigation Bar";
+			  const navText = "Sosmed" // Membuat variabel yang akan dimasukan ke Navbar
+
+			  return (
+			    <div className="App">
+			      <header className="App-header">
+				<Navbar navText={navText} navHeading={navHeading}/> 
+				{/* memasukan variable kedalam element */}
+				<img src={logo} className="App-logo" alt="logo" />
+				<p>
+				  First Proyek Dong.
+				</p>
+				<a>
+				  
+				    Website
+				</a>
+				<MyButton/>
+				<Footer/>
+			       
+				
+			      </header>
+			    </div>
+			  );
+			}
+
+			export default App;
+			
+			
+			
+			
+Lalu cara memanggil props dengan cara :
+di file Navbar.js :
+
+			function Navbar(props){ //Memanggil Props dengan cara memasukan props pada parameter
+			   
+			    return (
+				<div>
+				    <h1>{props.navHeading}</h1>
+				    <ul>
+					<li>
+					    <a href="#">Home</a>
+					</li>
+					<li>
+					    <a href="#">Profil</a>
+					</li>
+					<li>
+					    <a href="#">Contact</a>
+					</li>
+					<li>
+					    <a href="#">{props.navText}</a>
+					    {/* cara memanggil props dari variable App */}
+					</li>
+				    </ul>
+				</div>
+
+				)
+			}
+
+
+			export default Navbar;
+
+
+Pembuatan Props Untuk Button :
+
+			import logo from './logo.svg';
+			import './App.css';
+			import MyButton from './Component/MyButton';
+			import Navbar from './Component/Navbar';
+			import Footer from './Component/ClassComponent';
+
+			const App = () => {
+			  const navHeading = "Navigation Bar";
+			  const navText = "Sosmed" // Membuat variabel yang akan dimasukan ke Navbar
+
+
+			  const click = () =>{
+			    return alert (" tombol merah! tombol merah! ");
+			  }
+
+
+			  return (
+			    <div className="App">
+			      <header className="App-header">
+				<Navbar navText={navText} navHeading={navHeading}/> 
+				{/* memasukan variable kedalam element */}
+				<img src={logo} className="App-logo" alt="logo" />
+				<p>
+				  First Proyek Dong.
+				</p>
+				<a>
+				  
+				    Website
+				</a>
+				<MyButton click={click}/>
+				<Footer/>
+			       
+				
+			      </header>
+			    </div>
+			  );
+			}
+
+			export default App;
+
+
+
+Dipanggil melalui file MyButton.js
+
+			//PROPS
+			const MyButton = (porps) => {
+			    return (
+				<div>
+				     <button onClick ={() => porps.click()}>Click Disini</button>
+				 </div>
+			    )
+			}
+
+			export default MyButton;
+					
+
 
 
 
