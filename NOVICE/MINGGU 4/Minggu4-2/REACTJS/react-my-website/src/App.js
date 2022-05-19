@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import MyButton from './Component/MyButton';
+import Navbar from './Component/Navbar';
+import Footer from './Component/ClassComponent';
 
 const App = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <Navbar/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           First Proyek Dong.
@@ -15,6 +18,7 @@ const App = () => {
             Website
         </a>
         <MyButton/>
+        <Footer/>
        
         
       </header>
