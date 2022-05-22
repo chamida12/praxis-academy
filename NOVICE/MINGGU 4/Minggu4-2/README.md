@@ -9,6 +9,45 @@ Cara install reactjs:
 4. Masukan " create-react-app react-my-website "
 5. jalankan " npm start "
 
+---- Dynamic Value -----
+
+			File App.js
+
+			function App() {
+			  const title = "Welcome to My Web ";
+			  const angka = 40;
+			  const link = " https://www.w3schools.com/js/ "
+			  return (
+			 
+
+			    <div>
+			       <h1> {title} </h1>
+			       <h1> {angka * 2 }</h1>
+			       <a href={link}> Ayo mampir!! </a>
+			    </div>
+			  );
+			}
+
+			export default App;
+			
+
+
+
+Index.js 
+
+			import React from 'react';
+			import ReactDOM from 'react-dom/client';
+			import App from './App';
+
+
+			const root = ReactDOM.createRoot(document.getElementById('root'));
+			root.render(
+			  <React.StrictMode>
+			    <App />
+			  </React.StrictMode>
+			);
+
+
 
 
 --COMPONENT REACTJS ---
@@ -260,8 +299,119 @@ Dipanggil melalui file MyButton.js
 			export default MyButton;
 					
 
+* Mengirim Parameter melalui event klik :
 
+
+			import Header from "./Component/Header";
+
+			function App() {
+			  const title = "Welcome to My Web ";
+			  const angka = 40;
+			  const link = " https://www.w3schools.com/js/ "
+
+
+			  const clickme = (name) => { //Menangkap parameter name 
+			    alert ("Hello " + name);
+			  }
+			  return (
+			 
+
+			    <div>
+			      <Header/>
+			       <h1> {title} </h1>
+			       <h1> {angka * 2 }</h1>
+			       <a href={link}> Ayo mampir!! </a>
+			       <button onClick={ () => clickme('Chami')}> Click Me</button>
+			    </div>
+			  );
+			}
+
+			export default App;
 
 
 		
+
+
+---- Usestate Hook ---
+ 
+Digunakan untuk mengubah variable. Saya mencoba mengubah title pada file berikut :
+
+			import Header from "./Component/Header";
+
+			function App() {
+			  const title = "Welcome to My Web ";
+			  const angka = 40;
+			  const link = " https://www.w3schools.com/js/ "
+
+
+			  const clickme = (name) => { //Menangkap parameter name 
+			    alert ("Hello " + name);
+			  }
+			  return (
+			 
+
+			    <div>
+			      <Header/>
+			       <h1> {title} </h1>
+			       <h1> {angka * 2 }</h1>
+			       <a href={link}> Ayo mampir!! </a>
+			       <button onClick={ () => clickme('Chami')}> Click Me</button>
+			    </div>
+			  );
+			}
+
+			export default App;
+			
+			
+Perubahan :
+  
+			  
+			  import { useState } from "react"; // Pertama Import useStatenya
+			import Header from "./Component/Header";
+
+			function App() {
+			  const [title, setTitle] = useState ("Welcome to My Web ");
+			  const [angka, setAngka] = useState (40);
+			  
+
+
+			  const ubahJudul = () => {  
+			    setTitle (" Merubah Dunia ");
+			    setAngka(20);
+			  }
+			  return (
+			 
+
+			    <div>
+			      <Header/>
+			       <h1> {title} </h1>
+			       <h1> {angka * 2 }</h1>
+			   
+			       <button onClick={ ubahJudul }> Click Me</button> 
+			       {/* Hpus bagian anonyus function */}
+			    </div>
+			  );
+			}
+
+			export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
