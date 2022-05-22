@@ -394,6 +394,48 @@ Perubahan :
 			}
 
 			export default App;
+			
+			
+			
+--- Looping List --- 
+
+
+			import { useState } from "react"; // Pertama Import useStatenya
+			import Header from "./Component/Header";
+
+			function App() {
+			 
+			  const [ produk, setProduk] = useState ([
+			    { id : 1, title: 'Produk 1', peice: 899},
+			    { id : 2, title: 'Produk 2', peice: 769},
+			    { id : 3, title: 'Produk 3', peice: 989},
+			    { id : 4, title: 'Produk 4', peice: 871},
+			    { id : 5, title: 'Produk 5', peice: 459},
+			  ]);
+
+			 
+			     
+			  
+			  return (
+			 
+
+			    <div>
+			      <Header/>
+			      <ul>
+			      { produk.map(( produk ) => (
+				<li key = { produk.id }>{ produk.title } - { produk.peice}</li>
+			      )
+			)} 
+
+
+			      </ul>
+			       
+			    </div>
+			  );
+			}
+
+			export default App;
+
 
 
 
