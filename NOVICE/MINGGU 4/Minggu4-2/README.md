@@ -170,6 +170,132 @@ di render atau muat ulang ketika data mengalami perubahan.
 
 --- PROPS REACT ---
 
+Mengirim komponen anak ke komponen induk atau sebaliknya :
+
+contoh mengirim komponen Induk ke komponen anak, membuat file app.js seperti berikut :
+
+
+			import { useState } from "react"; // Pertama Import useStatenya
+			import Header from "./Component/Header";
+			import Produk from "./Component/Produk";
+
+			function App() {
+			 
+			  const [ produk, setProduk] = useState ([
+			    { id : 1, title: 'Produk 1', peice: 899},
+			    { id : 2, title: 'Produk 2', peice: 769},
+			    { id : 3, title: 'Produk 3', peice: 989},
+			    { id : 4, title: 'Produk 4', peice: 871},
+			    { id : 5, title: 'Produk 5', peice: 459},
+			  ]);
+
+			 
+			     
+			  
+			  return (
+			 
+
+			    <div>
+			      <Header/>
+			     <Produk produk = {produk}/>
+			 
+			       
+			    </div>
+			  );
+			}
+
+			export default App;
+			
+			
+Membuat file baru bernama Produk.js seperti ini dan menghubungkannya :
+
+
+			const Produk = (props) => {
+			    return (
+				<div>
+				     <ul>
+					{ props.produk.map(( produk ) => (
+				<li key = { produk.id }>{ produk.title } - { produk.peice}</li>
+			      )
+			)} 
+
+
+			      </ul>
+				</div>
+			    )
+			}
+
+
+			export default Produk;
+
+
+
+Mengirim komponen anak ke komponen induk :
+
+Membuaut code di App.js seperti berikut :
+
+			import { useState } from "react"; // Pertama Import useStatenya
+			import Header from "./Component/Header";
+			import Produk from "./Component/Produk";
+
+			function App() {
+			 
+			  const [ produk, setProduk] = useState ([
+			    { id : 1, title: 'Produk 1', peice: 899},
+			    { id : 2, title: 'Produk 2', peice: 769},
+			    { id : 3, title: 'Produk 3', peice: 989},
+			    { id : 4, title: 'Produk 4', peice: 871},
+			    { id : 5, title: 'Produk 5', peice: 459},
+			  ]);
+			  const deleteProduk = ( produkId) => {
+			    const newProduk = produk.filter ( produk => produk.id !== produkId);// Menggukan fungsi filter
+			    //mencari element didalam array 
+			    setProduk(newProduk);
+			  }
+
+			 
+			     
+			  
+			  return (
+			 
+
+			    <div>
+			      <Header/>
+			     <Produk produk = {produk}deleteProduk= {deleteProduk}/>
+			 
+			       
+			    </div>
+			  );
+			}
+
+			export default App;
+			
+			
+Lalu membuat kode di folder Produk.js seperti ini :
+
+
+			const Produk = ({produk, deleteProduk}) => {
+			    return (
+				<div>
+				     <ul>
+					{ produk.map(( produk ) => (
+				<li key = { produk.id }>{ produk.title } - { produk.peice}
+				<button onClick={() => deleteProduk(produk.id)}> Delete </button>
+				</li>
+			      )
+			)} 
+
+
+			      </ul>
+				</div>
+			    )
+			}
+
+
+			export default Produk;
+			
+Contoh pembuatan navbar dengan props : 
+
 
 
 			import logo from './logo.svg';
@@ -435,6 +561,11 @@ Perubahan :
 			}
 
 			export default App;
+
+
+--- useEffect Hook ----
+
+
 
 
 
