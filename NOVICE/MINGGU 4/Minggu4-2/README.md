@@ -175,7 +175,7 @@ Mengirim komponen anak ke komponen induk atau sebaliknya :
 contoh mengirim komponen Induk ke komponen anak, membuat file app.js seperti berikut :
 
 
-			import { useState } from "react"; // Pertama Import useStatenya
+			import { useState } from "react";
 			import Header from "./Component/Header";
 			import Produk from "./Component/Produk";
 
@@ -234,7 +234,7 @@ Mengirim komponen anak ke komponen induk :
 
 Membuaut code di App.js seperti berikut :
 
-			import { useState } from "react"; // Pertama Import useStatenya
+			import { useState } from "react"; 
 			import Header from "./Component/Header";
 			import Produk from "./Component/Produk";
 
@@ -492,7 +492,7 @@ Digunakan untuk mengubah variable. Saya mencoba mengubah title pada file berikut
 Perubahan :
   
 			  
-			  import { useState } from "react"; // Pertama Import useStatenya
+			  import { useState } from "react";  // Pertama Import useStatenya
 			import Header from "./Component/Header";
 
 			function App() {
@@ -526,7 +526,7 @@ Perubahan :
 --- Looping List --- 
 
 
-			import { useState } from "react"; // Pertama Import useStatenya
+			import { useState } from "react"; 
 			import Header from "./Component/Header";
 
 			function App() {
@@ -565,6 +565,72 @@ Perubahan :
 
 --- useEffect Hook ----
 
+Contoh menggunakan dua file. Satu file di isi dengan kode berikut :
+
+			import { useState, useEffect } from "react";
+			import Header from "./Component/Header";
+			import Produk from "./Component/Produk";
+
+			function App() {
+			 
+			  const [ produk, setProduk] = useState ([
+			    { id : 1, title: 'Produk 1', peice: 899},
+			    { id : 2, title: 'Produk 2', peice: 769},
+			    { id : 3, title: 'Produk 3', peice: 989},
+			    { id : 4, title: 'Produk 4', peice: 871},
+			    { id : 5, title: 'Produk 5', peice: 459},
+			  ]);
+			  const deleteProduk = ( produkId) => {
+			    const newProduk = produk.filter ( produk => produk.id !== produkId);
+			    setProduk(newProduk);
+			  }
+
+			  const [name, setName] = useState('Chami') //membuat  state bernama name
+
+
+			  useEffect(()=> {
+			    console.log ('efect berjalan');//membuat  funtion untuk effect 
+
+			  },[name]);
+			 
+			     
+			  
+			  return (
+			 
+
+			    <div>
+			      <Header/>
+			     <Produk produk = {produk}deleteProduk= {deleteProduk}/>
+			     <button onClick={() => setName('Umami')}> Ubah Nama </button>
+			     <p>{name}</p>
+			    </div>
+			  );
+			}
+
+			export default App;
+
+
+Satunya lagi dengan kode berikut :
+
+			const Produk = ({produk, deleteProduk}) => {
+			    return (
+				<div>
+				     <ul>
+					{ produk.map(( produk ) => (
+				<li key = { produk.id }>{ produk.title } - { produk.peice}
+				<button onClick={() => deleteProduk(produk.id)}> Delete </button>
+				</li>
+			      )
+			)} 
+
+
+			      </ul>
+				</div>
+			    )
+			}
+
+
+			export default Produk;
 
 
 
