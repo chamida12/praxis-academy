@@ -9,6 +9,12 @@ Cara install reactjs:
 4. Masukan " create-react-app react-my-website "
 5. jalankan " npm start "
 
+Jika node.js dan npm belum versi baru maka harus di update dengan cara:
+
+1. sudo npm cache clean -f
+2. sudo npm install -g n
+3. sudo n stable
+
 ---- Dynamic Value -----
 
 			File App.js
