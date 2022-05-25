@@ -17,7 +17,7 @@ class Home extends Component{
             <YouTubeCom 
              time="7.30" 
              title=" Tutorial Reactjs Part 3"
-             desc="20rb x ditonton, 8 jam yang lalu"/>  
+             desc="20rb x ditonton, 5 jam yang lalu"/>  
             <YouTubeCom 
              time="9.03" 
              title=" Tutorial Reactjs Part 4"
