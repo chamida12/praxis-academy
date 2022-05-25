@@ -640,7 +640,6 @@ Satunya lagi dengan kode berikut :
 
 
 
-Aplod
 
 
 
