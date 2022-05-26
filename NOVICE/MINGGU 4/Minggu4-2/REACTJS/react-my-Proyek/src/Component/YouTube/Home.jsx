@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import Product from "../../Container/Product";
 import YouTubeCom from "./YouTube";
 
 class Home extends Component{
     render(){
      return (
         <div>
-            <p> <h1> Youtube Ngaji Coding </h1> </p>
-            <YouTubeCom 
+            <p> <h1> Pengen Makan  </h1> </p>
+            {/* <YouTubeCom 
              time="3.19" 
              title=" Tutorial Reactjs Part 1"
              desc="100rb x ditonton, 3 hari yang lalu"/>
@@ -22,7 +23,10 @@ class Home extends Component{
              time="9.03" 
              title=" Tutorial Reactjs Part 4"
              desc="500rb x ditonton, 10 hari yang lalu"/>
-            <YouTubeCom/>  
+            <YouTubeCom/>   */}
+            <p><h4> Cobain !!! </h4></p>
+            <hr/>
+            <Product/>
            
             
       
