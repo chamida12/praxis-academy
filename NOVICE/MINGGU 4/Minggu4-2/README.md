@@ -643,6 +643,16 @@ Satunya lagi dengan kode berikut :
 
 
 
+-----Mengubah Component menjadi Dinamis pada props---
+
+Terdapat pada folder component yang dalamnya terdapat folder ytb 
+
+
+
+--- Component Mengubah Niali Pada Perent ----
+
+
+
 
 
 
