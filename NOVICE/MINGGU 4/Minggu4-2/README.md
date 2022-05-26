@@ -645,11 +645,11 @@ Satunya lagi dengan kode berikut :
 
 -----Mengubah Component menjadi Dinamis pada props---
 
-Terdapat pada folder component yang dalamnya terdapat folder ytb 
+Hasil Proyek ini terdapat pada folder NOVICE/MINGGU 4/Minggu4-2/REACTJS/react-my-proyek/src/Component/YouTube
 
 
 
---- Component Mengubah Niali Pada Perent ----
+--- Component Mengubah Nilai Pada Perent ----
 
 
 
