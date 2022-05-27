@@ -5,7 +5,14 @@ class Product extends Component {
     state = {
         order: 4
     }
+
+    handlePlus = () =>{
+
+    }
    
+    handleMinus = () =>{
+
+    }
     render(){
         return(
             <Fragment>
@@ -27,9 +34,9 @@ class Product extends Component {
                 <p className=" product-title"> Daging Ayam Berbumbu Rasa Original</p>
                 <p className=" product-price"> Rp.410.000 </p>
                 <div className="counter">
-                    <button className="minus"></button>
+                    <button className="minus" onClick={this.handleMinus}></button>
                     <input type="text" value={this.state.order}/>
-                    <button className=" plus"></button>
+                    <button className=" plus" onClick={this.handlePlus}></button>
                 </div>
             </div>
          </Fragment>
