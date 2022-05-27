@@ -3,15 +3,26 @@ import'./Product.css';
 
 class Product extends Component {
     state = {
-        order: 4
+        order: 0 // Membuat state yang dimasukan kedalam troley & card
     }
 
     handlePlus = () =>{
+        this.setState({
+            order: this.state.order + 1 //Jadi ini maksudnya adalah value state sebelumnya ditambahkan satu
+        })
 
     }
    
-    handleMinus = () =>{
+    handleMinus = () => {
+        if(this.state.order > 0){ //Ketika state order lebih besar dari 0 maka eksekusi set order di bawah. Namun jika state order sama dengan 0
+                                    //atau kurang dari 0 maka fungsi dibawah atau setstate tidak dipakai
+            this.setState({
+                order: this.state.order - 1
+            }) 
+    
 
+        }
+        
     }
     render(){
         return(
