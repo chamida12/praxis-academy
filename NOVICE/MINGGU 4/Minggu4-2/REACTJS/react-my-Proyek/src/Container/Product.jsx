@@ -1,28 +1,16 @@
 import React, {Component,Fragment} from "react";
 import'./Product.css';
+import CardProduct from "./CardProdact";
 
 class Product extends Component {
     state = {
         order: 0 // Membuat state yang dimasukan kedalam troley & card
     }
-
-    handlePlus = () =>{
+    handlePerubahanCounter =( newValue)=> {
         this.setState({
-            order: this.state.order + 1 //Jadi ini maksudnya adalah value state sebelumnya ditambahkan satu
+            order: newValue
         })
-
-    }
-   
-    handleMinus = () => {
-        if(this.state.order > 0){ //Ketika state order lebih besar dari 0 maka eksekusi set order di bawah. Namun jika state order sama dengan 0
-                                    //atau kurang dari 0 maka fungsi dibawah atau setstate tidak dipakai
-            this.setState({
-                order: this.state.order - 1
-            }) 
     
-
-        }
-        
     }
     render(){
         return(
@@ -38,18 +26,8 @@ class Product extends Component {
 
             </div>
             
-            <div className=" card">
-                <div className="img-thumb-prod">
-                    <img src="https://cdn1-production-images-kly.akamaized.net/WtODOvnlFFYvDrX4_ABr6k3HrbQ=/1907x0:5537x3630/1200x1200/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2934548/original/058073500_1570610704-shutterstock_318541805.jpg" alt=""/>
-                </div>
-                <p className=" product-title"> Daging Ayam Berbumbu Rasa Original</p>
-                <p className=" product-price"> Rp.410.000 </p>
-                <div className="counter">
-                    <button className="minus" onClick={this.handleMinus}></button>
-                    <input type="text" value={this.state.order}/>
-                    <button className=" plus" onClick={this.handlePlus}></button>
-                </div>
-            </div>
+            <CardProduct CountBerubah={(value) => this.handlePerubahanCounter(value)}/> 
+            {/* ini adalah sebuah props yang berupa perents */}
          </Fragment>
 
         );
