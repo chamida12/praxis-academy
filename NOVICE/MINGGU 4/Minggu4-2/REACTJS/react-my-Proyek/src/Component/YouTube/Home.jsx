@@ -1,12 +1,24 @@
 import React, { Component } from "react";
-import Product from "../../Container/Product";
-import YouTubeCom from "./YouTube";
+// import Product from "../../Container/Product";
+import LifeCycleComp from "../LifeCycleComp/LifeCycleComp";
+// import YouTubeCom from "./YouTube";
 
 class Home extends Component{
+    state = {
+        showComponent: true
+    }
+    componentDidMount(){
+        setTimeout(() => {
+            this.setState({
+                showComponent:false
+            })
+        },15000)
+
+    }
     render(){
      return (
         <div>
-            <p> <h1> Pengen Makan  </h1> </p>
+            {/* <p> <h1> Pengen Makan  </h1> </p> */}
             {/* <YouTubeCom 
              time="3.19" 
              title=" Tutorial Reactjs Part 1"
@@ -24,10 +36,19 @@ class Home extends Component{
              title=" Tutorial Reactjs Part 4"
              desc="500rb x ditonton, 10 hari yang lalu"/>
             <YouTubeCom/>   */}
-            <p><h4> Cobain !!! </h4></p>
+            {/* <p><h4> Cobain !!! </h4></p>
             <hr/>
-            <Product/>
+            <Product/> */}
+
+            <p> LifeCycle Component </p>
+            <hr/>
+            {
+                this.state.showComponent
+                ?
+                <LifeCycleComp/> : null
            
+            }
+            
             
       
 
