@@ -43,9 +43,10 @@ class Home extends Component{
             <p> LifeCycle Component </p>
             <hr/>
             {
-                this.state.showComponent
-                ?
-                <LifeCycleComp/> : null
+                // this.state.showComponent
+                // ?
+                <LifeCycleComp/> 
+                // : null
            
             }
             
