@@ -60,3 +60,67 @@ Pemanggilan API menggunakan Axios hanya perlu merubah bagian
 
 
 
+
+
+
+---- ROUTING -----
+
+
+
+install terlebih dahuli react - router -dom dengan cara :
+
+                 npm install react-router-dom
+
+
+
+file yang di root :
+
+                import React from "react";
+                import { Routes,Route } from "react-router-dom";
+                import BlogPost from "../BlogPost/BlogPost";
+                import Product from "../../Container/Product";
+
+                function Home (){
+                    return (
+                        <Routes>
+                            <Route path="/" element={<BlogPost/>}></Route>
+                            <Route path="/aku" element={<Product/>}></Route>
+                        </Routes>
+                    )
+                }
+
+
+                export default Home;
+
+
+
+Di root di index.js:
+
+
+            import React from 'react';
+            import ReactDOM from 'react-dom/client';
+            import { BrowserRouter } from 'react-router-dom';
+            import './index.css';
+            import reportWebVitals from './reportWebVitals';
+            import Home from './Component/YouTube/Home';
+
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(
+              <React.StrictMode>
+                <BrowserRouter>
+                
+                <Home/>
+                
+                </BrowserRouter>
+              
+              </React.StrictMode>
+            );
+
+            reportWebVitals();
+
+
+
+
+
+
+
