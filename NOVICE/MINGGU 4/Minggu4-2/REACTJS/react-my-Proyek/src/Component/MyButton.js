@@ -1,5 +1,5 @@
 //PROPS
-const MyButton = (porps) => {
+const MyButton = (props) => {
     return (
         <div>
              <button onClick ={() => porps.click()}>Click Disini</button>
