@@ -1,61 +1,102 @@
-import React from "react";
-import { Form, FormLabel,Button} from "react-bootstrap";
-import Swal from "sweetalert2";
+import axios from "axios";
+import React, { Component, Fragment } from "react";
+import { Form, FormLabel,Button, FormControl} from "react-bootstrap";
+import Daftar from "./Daftar";
 
-function Data (){
-  const alert =()=>{
 
-    Swal.fire({
-      title: 'Custom width, padding, color, background.',
-      width: 600,
-      padding: '3em',
-      color: '#716add',
-      background: '#fff url(/images/trees.png)',
-      backdrop: `
-        rgba(0,0,123,0.4)
-        url("/images/nyan-cat.gif")
-        center top
-        no-repeat
-      `
+class Data extends Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      dataAPI:[],
+      dataPost:{
+        id:0,
+        Nama:'',
+        Daerah:'',
+        tahunMasuk:'',
+        tahunKeluar:'',
+        noHp: '',
+        Email:'',
+      }
+    };
+    this.inputChange = this.inputChange.bind(this);
+    this.onSubmitForm = this.onSubmitForm.bind(this);
+    
+  }
+
+  reloadData(){
+    axios.get("http://127.0.0.1:5000/read").then(res => {
+      this.setState({
+        dataAPI: res.data
+      })
     })
   }
-  
+
+  inputChange(e){
+    let newdataPost ={...this.state.dataPost};
+    newdataPost['id'] = new Date().getTime();
+    newdataPost[e.target.name] = e.target.value;
+
+
+    this.setState({
+      dataPost : newdataPost
+    },() => console.log(this.state.dataPost)
+    );
+    
+  }
+
+  onSubmitForm(){
+    axios.post("http://127.0.0.1:5000/read",this.state.dataPost).then(() => {this.reloadData();
+  });
+}
+
+  componentDidMount(){
+    this.reloadData();
+  }
+
+    render(){
     return(
-    <Form actstyle={{padding:"50px"}}>
+    <Fragment>
+    <Daftar/>
+    <Form style={{padding:"50px"}}>
     <h2> Silahkan Masukan Data Diri Anda!</h2>
-    <Form.Group className="mb-3" >
+    <Form.Group className="mb-3">
       <FormLabel>Nama</FormLabel>
-      <Form.Control type="name" placeholder="Nama lengkap" />
+      <FormControl style={{width:"450px"}} type="text" name="Nama"  placeholder="Nama lengkap" onChange={this.inputChange}/>
     </Form.Group>
     <Form.Group className="mb-3" >
       <FormLabel>Daerah</FormLabel>
-      <Form.Control type="daerah" placeholder="Daerah" />
+      <FormControl style={{width:"450px"}}  type="daerah" name="Daerah" placeholder="Daerah" />
     </Form.Group>
     <Form.Group className="mb-3" >
       <FormLabel>Tahun Masuk</FormLabel>
-      <Form.Control type="tahunm" placeholder="Tahun Masuk" />
+      <Form.Control style={{width:"450px"}}  type="tahunm" name="tahunMasuk" placeholder="Tahun Masuk" />
     </Form.Group>
     <Form.Group className="mb-3" >
       <FormLabel>Tahun Keluar</FormLabel>
-      <Form.Control type="tahunk" placeholder="Tahun Keluar" />
+      <Form.Control style={{width:"450px"}}  type="tahunk" name="tahunKeluar" placeholder="Tahun Keluar" />
     </Form.Group>
     <Form.Group className="mb-3" >
       <FormLabel>No.hp</FormLabel>
-      <Form.Control type="no" placeholder="No.hp" />
+      <Form.Control style={{width:"450px"}}  type="no" name="noHp" placeholder="No.hp" />
     </Form.Group>
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Email</Form.Label>
-      <Form.Control type="email" placeholder="Email" />
+      <Form.Control style={{width:"450px"}}  type="email" name="Email" placeholder="Email" />
     </Form.Group>
     <Form.Group className="mb-3" controlId="formBasicCheckbox">
       <Form.Check type="checkbox" label="lengkapi data anda" />
     </Form.Group>
-    <Button onClick={()=> alert()} variant="primary" type="submit">
+    <Button variant="primary" type="submit" onClick={this.onSubmitForm}>
     Submit
   </Button>
   </Form>
-  )
+  
+  </Fragment>
+    )
+}
     
 }
+
 
 export default Data;

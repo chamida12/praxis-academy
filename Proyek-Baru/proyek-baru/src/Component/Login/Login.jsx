@@ -1,8 +1,10 @@
 import React from "react";
 import { Form, Button, Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 
-const OK = () => {
+const Login = () => { 
+  const navigate = useNavigate()
   return (
     <div className="cover" >
     <Container id="main-container" className="d-grid h-100" style={{ marginTop: "150px"}}>
@@ -21,11 +23,11 @@ const OK = () => {
     <Form.Group className="mb-3" controlId="formBasicCheckbox">
       <Form.Check type="checkbox" label="Anda alumni pondok leteh?" />
     </Form.Group>
-    <Button variant="success" type="submit">Masuk</Button>
+    <Button variant="success" type="submit" onClick={() => {navigate("/home");}}>Masuk</Button>
   </Form>
   </Container>
   </div>
   );
   }
 
-  export default OK;
+  export default Login;
