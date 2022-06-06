@@ -14,9 +14,12 @@ function Daftar (){
               <Nav.Link href="#data">Data</Nav.Link>
               <Nav.Link href="#LogOut">Log Out</Nav.Link>
               <NavDropdown  title="Hubungi Kami" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#pesantren">Profil Pesantren</NavDropdown.Item>
+                <NavDropdown.Item href="#pesantren">Instagram</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#pengasuh">Profil Pengasuh</NavDropdown.Item>
+                <NavDropdown.Item href="#pengasuh">Whatshapp</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#pesantren">Twitter</NavDropdown.Item>
+                <NavDropdown.Divider />
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
