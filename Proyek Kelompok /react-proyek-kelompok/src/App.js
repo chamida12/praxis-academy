@@ -1,18 +1,12 @@
-// import { Button } from "bootstrap";
-import React,{Component} from "react";
-import Login from "./Login/Login";
+import React from 'react'
+import Get from './ConsumAPI/Get/Get'
 
-class App extends Component {
-  render(){
-    return(
-      <div>
+const App = () => {
+  return (
+    <div>
+      <Get/>
+    </div>
+  )
+}
 
-        <Login/>
-    
-      </div>
-    )
-  }
-} 
-
-
-export default App;
+export default App
