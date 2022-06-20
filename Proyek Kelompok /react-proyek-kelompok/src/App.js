@@ -1,5 +1,6 @@
 import React from 'react'
-import Get from './ConsumAPI/Get/Get'
+
+import PostApi from './ConsumAPI/Post/PostApi'
 
 
 
@@ -9,7 +10,7 @@ const App = () => {
   return (
     <div>
     
-      <Get/>
+      <PostApi/>
     </div>
   )
 }
