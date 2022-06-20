@@ -1,10 +1,12 @@
 import React from 'react'
-import Get from './ConsumAPI/Get/Get'
+import DeleteFake from './ConsumAPI/Delete/DeleteFake'
+
+
 
 const App = () => {
   return (
     <div>
-      <Get/>
+      <DeleteFake/>
     </div>
   )
 }
