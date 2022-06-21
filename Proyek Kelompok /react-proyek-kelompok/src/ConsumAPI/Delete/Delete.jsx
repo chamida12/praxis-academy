@@ -10,22 +10,27 @@ class Delete extends Component {
         this.handleRemove=this.handleRemove.bind(this);
     }
 
-    handleRemove(e){
-        console.log(e.target.value);
-        fetch(`https://4b9e-36-73-71-108.ap.ngrok.io/list${e.target.value}`,{
-            method:"DELETE"
-        }).then(res => console.log(res));
 
-    }
-///cara mendelate
-
-    componentDidMount () {
-         axios.get('https://4b9e-36-73-71-108.ap.ngrok.io/list').then(res => {
+    reloadData(){
+        axios.get('https://549e-36-73-71-108.ap.ngrok.io/list').then(res => {
             console.log("GET API: ", res.data.data);
             this.setState({
                 dataApi:res.data.data
             })
          });
+    }
+
+    handleRemove(e){
+        console.log(e.target.value);
+        fetch(`https://549e-36-73-71-108.ap.ngrok.io/delete${e.target.value}`,{
+            method:"DELETE"
+        }).then(res => this.reloadData());
+
+    }
+///cara mendelate
+
+    componentDidMount () {
+       this.reloadData(); 
 
     }
 
