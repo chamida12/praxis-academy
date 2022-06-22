@@ -45,7 +45,8 @@ class PostApi extends Component {
 
   onSubmitForm(){
     axios.post("https://65f3-36-73-71-108.ap.ngrok.io/create",this.state.dataPost)
-    .then(() => {this.reloadData();
+    .then(() => {
+      this.reloadData();
   });
 }
 
