@@ -12,8 +12,7 @@ class PostApi extends Component {
     this.state ={
       dataAPI:[],
       dataPost:{
-        id:0,
-        nama:'',
+        username:'',
         email:'',
       }
     };
@@ -23,7 +22,8 @@ class PostApi extends Component {
   }
 
   reloadData(){
-    axios.get("https://65f3-36-73-71-108.ap.ngrok.io/list").then(res => {
+    axios.get("http://192.168.1.71:5000/read").then(res => {
+      console.log("GET API:", res.data);
       this.setState({
         dataAPI: res.data.data
       })
@@ -32,8 +32,9 @@ class PostApi extends Component {
 
   inputChange(e){
     let newdataPost ={...this.state.dataPost};
-    newdataPost['id'] = new Date().getTime();
+    // newdataPost['id'] = new Date().getTime();
     newdataPost[e.target.name] = e.target.value;
+    
 
 
     this.setState({
@@ -44,14 +45,45 @@ class PostApi extends Component {
   }
 
   onSubmitForm(){
-    axios.post("https://65f3-36-73-71-108.ap.ngrok.io/create",this.state.dataPost)
-    .then(() => {
-      this.reloadData();
+  //   axios.post("http://192.168.1.71:5000/create",this.state.dataPost)
+  //   .then((results) => {
+  //     console.log("POST RESULTS;",results)
+  //     console.log("bambang")
+  //     this.reloadData();
+  // })
+  // .catch((eror)=>{
+  //   console.log("EROR POST",eror);
+  // });
+  // console.log(this.state.dataPost)
+  // axios({
+  //   method: "POST",
+  //   url: "http://192.168.1.71:5000/create",
+
+  //   data: {
+  //     quiz_name: "quizname",
+  //   },
+  // })
+  // .then(res => {
+  //   console.log("res", res.data.message);
+  // })
+  // .catch(err => {
+  //   console.log("error in request", err);
+  // });
+  const json = JSON.stringify(this.state.dataPost);
+  console.log(json)
+  axios.post(
+    "http://192.168.1.71:5000/create",
+    this.state.dataPost
+  ).then(res => {
+    console.log("res", res.data.message);
+  })
+  .catch(err => {
+    console.log("error in request", err);
   });
 }
 
   componentDidMount(){
-    this.reloadData();
+    // this.reloadData();
   }
 
     render(){
@@ -61,16 +93,14 @@ class PostApi extends Component {
     <h2> Silahkan Masukan Data Diri Anda!</h2>
     <Form.Group className="mb-3" >
       <FormLabel>Nama</FormLabel>
-      <FormControl type="text" name="nama"  placeholder="Nama lengkap" onChange={this.inputChange}/>
+      <FormControl type="text" name="username"  placeholder="Nama lengkap" value={this.state.username}  onChange={this.inputChange}/>
     </Form.Group>
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Email</Form.Label>
-      <Form.Control type="email" name="email" placeholder="Email" />
+      <Form.Control type="email" name="email" value={this.state.email} onChange={this.inputChange} placeholder="email" />
     </Form.Group>
-    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-      <Form.Check type="checkbox" label="lengkapi data anda" />
-    </Form.Group>
-    <Button variant="primary" type="submit" onClick={this.onSubmitForm}>
+  
+    <Button variant="primary"  onClick={this.onSubmitForm}>
     Submit
   </Button>
   </Form>
@@ -110,20 +140,21 @@ export default PostApi;
 //         super(props)
 
 //         this.state = {
-//             id:'',
-//             nama_lengkap:'',
-//             email:'',
+//             id:"",
+//             username:"",
+//             email:"",
 //         }
 //     }
 //     handleChange = (e) => {
 //         this.setState({[e.target.name] : e.target.value})
 //     }
 //     TambahData = () => {
-//         axios.post('https://f82b-36-73-71-108.ap.ngrok.io/create', {
-//             nama_lengkap:this.state.nama_lengkap,
+//         axios.post("https://0104-36-72-212-11.ap.ngrok.io/create", {
+//             username:this.state.username,
 //             email: this.state.email
 //         }).then(json => {
-//             if(json.data.status === 400){
+//           console.log("POST API :", json.data.data[0])
+//             if(json.data.status === 200){
 //                 this.setState({
 //                     response: json.data.data
 //                 })
@@ -139,7 +170,7 @@ export default PostApi;
 //         return(
 //             <div>
 //                 <h4>Tambah Data </h4>
-//                 <input type="text" name="nama_lengkap"  value={this.state.nama_lengkap} onChange={this.handleChange} placeholder="Nama Lengkap"/>
+//                 <input type="text" name="username"  value={this.state.username} onChange={this.handleChange} placeholder="Nama Lengkap"/>
 //                 <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email"/>
           
 //                 <button type="submit" onClick={this.TambahData}> Submit</button>    

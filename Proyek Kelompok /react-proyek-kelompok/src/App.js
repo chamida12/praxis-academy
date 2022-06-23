@@ -1,12 +1,12 @@
 import React from 'react'
-import PostApi from './ConsumAPI/Post/PostApi'
+import Delete from './ConsumAPI/Delete/Delete'
+import Get from './ConsumAPI/Get/Get'
 
 
 const App = () => {
   return (
     <div>
-    
-    <PostApi/>
+      <Delete/>
     </div>
   )
 }

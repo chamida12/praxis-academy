@@ -22,7 +22,7 @@ class Get extends Component {
 
         //  });   
          
-         axios.get('https://d5b8-36-73-71-108.ap.ngrok.io/satu').then(res => {
+         axios.get('https://d15c-36-72-213-206.ap.ngrok.io/read').then(res => {
              console.log("GET API:", res.data.data[0]);
             this.setState({
                 dataApi:res.data.data
@@ -40,7 +40,7 @@ render (){
             {this.state.dataApi.map((dat,lucu)=>
             {
                 return(<div key={lucu}><p> 
-                        {dat.upload}, {dat.id}
+                        {dat.email}, {dat.id}
                          </p></div>);
             })}
         </div>

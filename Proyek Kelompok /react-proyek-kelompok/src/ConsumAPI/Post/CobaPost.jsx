@@ -1,78 +1,112 @@
-import React, {Fragment}from "react";
-import { useState } from "react";
-import { Form,FormControl,FormLabel,Button } from "react-bootstrap";
-import Swal from "sweetalert2";
+
+import axios from "axios";
+import React, { Component, Fragment } from "react";
+import { Form, FormLabel,Button, FormControl} from "react-bootstrap";
 
 
-function CobaPost (){
-    const [nama,setNama] = useState("");
-    const [email,setEmail] = useState(""); 
-    const [pesan,setPesan] = useState ("");
 
-    let handleSubmit = async (e) => {
-        e.preventDefault ();
-        try {
-            
-            let res = await fetch("https://65f3-36-73-71-108.ap.ngrok.io/creat",{
-                method: "POST",
-                body:JSON.stringify({
-
-                'nama': nama,
-                'email': email,
-
-                }),
-            });
-
-             await res.json();
-            if (res.status === 400){
-                setNama("");
-               
-                setEmail("");
-                setPesan ("Sukses");
-            }else{
-                setPesan (" Gagal");
-            }
-        }catch(err){
-            console.log(err);
-        }
+class CobaPost extends Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      dataAPI:[],
+      dataPost:{
+        id:0,
+        username:'',
+        email:'',
+      }
     };
+    this.inputChange = this.inputChange.bind(this);
+    this.onSubmitForm = this.onSubmitForm.bind(this);
+    
+  }
 
-    const alert =()=>{
-      Swal.fire({
-        title:"Data Anda Sudah Berhasil Di Simpan!",
-        icon: 'success'
-      });
-    };
-    return(
-      <Fragment>
-       
-           
-           <Form onSubmit={handleSubmit} style={{padding:"50px"}}>
-           <h2> Silahkan Masukan Data Diri Anda!</h2>
-           <Form.Group className="mb-3">
-             <FormLabel>Nama</FormLabel>
-             <FormControl style={{width:"450px"}} type="text" 
-             name="nama"  
-             placeholder="Nama lengkap" 
-             onChange={(e) => setNama (e.target.value)}/>
-           </Form.Group>
-           <Form.Group className="mb-3" controlId="formBasicEmail">
-             <Form.Label>Email</Form.Label>
-             <Form.Control style={{width:"450px"}}  type="email" 
-             name="email" 
-             placeholder="Email" 
-             onChange={(e) => setEmail (e.target.value)}/>
-           </Form.Group>
-           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-             <Form.Check type="checkbox" label="lengkapi data anda" />
-           </Form.Group>
-           <Button onClick={()=> alert()} variant="outline-success" type="submit" >
-           Submit
-         </Button>
-         <div  className="pesan">{pesan ? <p>{pesan}</p> : null}</div>
-         </Form>
-        
-        </Fragment>
+  reloadData(){
+    axios.get("https://d15c-36-72-213-206.ap.ngrok.io/read").then(res => {
+      console.log("GET API:", res.data.data[0]);
+      this.setState({
+        dataAPI: res.data.data
+      })
+    })
+  }
+
+  inputChange(e){
+    let newdataPost ={...this.state.dataPost};
+    newdataPost['id'] = new Date().getTime();
+    newdataPost[e.target.name] = e.target.value;
+
+
+    this.setState({
+      dataPost : newdataPost
+    },() => console.log(this.state.dataPost)
     );
+    
+  }
+
+  onSubmitForm(){
+    axios.post("https://d15c-36-72-213-206.ap.ngrok.io/create",this.state.dataPost)
+    .then(() => {
+      this.reloadData();
+  });
 }
+
+  componentDidMount(){
+    this.reloadData();
+  }
+
+    render(){
+    return(
+    <Fragment>
+    <Form className="warna" >
+    <h2> Silahkan Masukan Data Diri Anda!</h2>
+    <Form.Group className="mb-3" >
+      <FormLabel>Nama</FormLabel>
+      <FormControl type="text" name="username"  placeholder="Nama lengkap" onChange={this.inputChange}/>
+    </Form.Group>
+    <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Label>Email</Form.Label>
+      <Form.Control type="email" name="email" placeholder="Email" />
+    </Form.Group>
+    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+      <Form.Check type="checkbox" label="lengkapi data anda" />
+    </Form.Group>
+    <Button variant="primary" onClick={this.inputChange}>
+    Submit
+  </Button>
+  </Form>
+  
+  </Fragment>
+    )
+}
+    
+}
+
+
 export default CobaPost;
+
+
+
+
+
+// import axios from "axios";
+
+// async function CobaPost(){
+//   const payload ={
+//     username: "aul",
+//     email: "aku@gmail.com"
+//   }
+
+
+
+
+// await axios.post('https://d15c-36-72-213-206.ap.ngrok.io/create',payload)
+// .then((results) => {
+//   console.log("POST RESULTS",results);
+// })
+// .catch((error) => {
+//   console.log("ERROR POST", error);
+// })
+// }
+
+
+// export default CobaPost;
