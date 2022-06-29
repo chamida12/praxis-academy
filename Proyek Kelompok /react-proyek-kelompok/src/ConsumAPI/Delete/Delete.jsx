@@ -12,7 +12,7 @@ class Delete extends Component {
 
     handleRemove(e){
         console.log(e.target.value);
-        fetch(`https://b2a6-36-72-214-142.ap.ngrok.io/delete/${e.target.email}`,{
+        fetch(`https://bfec-36-72-213-10.ap.ngrok.io/delete/${e.target.email}`,{
             method:"DELETE"
         }).then(res => console.log(res));
 
@@ -20,7 +20,7 @@ class Delete extends Component {
 ///cara mendelate
 
     componentDidMount () {
-         axios.get('https://b2a6-36-72-214-142.ap.ngrok.io/read').then(res => {
+         axios.get('https://bfec-36-72-213-10.ap.ngrok.io/read').then(res => {
             this.setState({
                 dataApi:res.data.data
             })
