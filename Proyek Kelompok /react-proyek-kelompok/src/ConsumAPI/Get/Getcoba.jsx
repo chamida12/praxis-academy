@@ -22,7 +22,7 @@ class Getcoba extends Component {
 
         //  });   
          
-         axios.get('https://5119-114-142-171-63.ap.ngrok.io/list').then(res => {
+         axios.get('https://489f-36-81-88-195.ap.ngrok.io/read').then(res => {
              console.log("GET API: ", res.data.data);
             this.setState({
                 dataApi:res.data.data
@@ -40,7 +40,7 @@ render (){
             {this.state.dataApi.map((dat,lucu)=>
             {
                 return(<div key={lucu}><p> 
-                        {dat.nama_lengkap}
+                        {dat.username}
                          </p></div>);
             })}
         </div>
